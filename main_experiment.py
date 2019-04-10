@@ -2,7 +2,10 @@ import pygame
 import sys
 import csv
 import random
+from pathlib import Path
+
 from parameter_list import *
+
 clock = pygame.time.Clock()
 
 def draw_stimulus(trialType):
@@ -70,11 +73,20 @@ def writeData(datalist, subID):
     """
     Function to write the list of responses to a csv dataFile
     """
-    # create a csvfile for each subject and name it: Sub[subID].csv
-    # add a header ('SubjectID','StimulusType','response','RT') to the csvfile
-    # and write each entry of datalist to a single row
-    # TODO
 
+    # Create a path object handling different path separators both on Windows and Linux and sanity check it.
+    file_path = Path("Data", "Sub{}.csv".format(subID))
+    if file_path.is_file():
+        raise ValueError("A subject with the given ID was already created!")
+
+    # Create or open the file to write
+    with file_path.open(mode="w", newline="") as file:
+        # Create the writer for the CSV output
+        writer = csv.writer(file)
+        # Write the header
+        writer.writerow(('SubjectID', 'StimulusType', 'response', 'RT'))
+        # Iterate through data and write each row
+        writer.writerows(datalist)
 
 ######                 main experiment loop            ##########
 def experiment(subID):
