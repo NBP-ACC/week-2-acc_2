@@ -49,11 +49,9 @@ BG_COLOR = (123,123,123)
 #Set fontsize of the text
 FONTSIZE = 60
 # Set number of trials in the experiment
-# How should you name the variable?
 NUMTRIAL=100
 
 # Set number of nogo trials in the experiment
-# How should you name the variable?
 PCT_NOGO=20
 
 # Set the time interval in seconds of the delay
