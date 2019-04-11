@@ -2,7 +2,8 @@ import os
 import sys
 import pygame
 from math import atan2,degrees
-
+import os.path
+from os import path
 
 #Initialise pygame
 pygame.init()
@@ -70,4 +71,5 @@ FPS = 60
 # Create a directory called 'Data' in your working-directory
 # where the experiment data for each subject is saved
 # before creating it check if the directory 'Data' already exists
-# TODO
+if not path.exists('data'):
+    os.mkdir('data')
