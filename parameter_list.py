@@ -54,7 +54,7 @@ FONTSIZE = 60
 NUMTRIAL = 100
 
 # Set number of nogo trials in the experiment
-PCT_NOGO = 0.5
+PCT_NOGO = 0.2
 
 #Set the time interval in milliseconds of the delay
 #from end of trial n and beginning of trial n+1
