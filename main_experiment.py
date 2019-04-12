@@ -148,11 +148,8 @@ def experiment(subID):
 
 
 if __name__ == "__main__":
-    # Allow to run the experiment without modifying the file by use of a command line argument.
-    if len(sys.argv) != 2:
-        print("[USAGE] python main_experiment SUBJECT_ID")
-    # Get the subject id from the command line argument
-    subID = sys.argv[1]
+    #Fill this before start of the experiment
+    subID = # TODO ID of the subject
 
     dataFile = experiment(subID)
     print('*'*30)
