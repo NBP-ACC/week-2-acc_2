@@ -149,7 +149,7 @@ def experiment(subID):
 
 if __name__ == "__main__":
     #Allow to run the experiment without modifying the file by use of command line argument
-    if len(sys.argv) != 2
+    if len(sys.argv) != 2:
         print("[Usage] python main_experiment SUBJECT_ID")
     #Get subject id from the command line argument
     subID = sys.argv[1]
